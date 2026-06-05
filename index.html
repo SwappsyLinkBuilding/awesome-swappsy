@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swappsy: Build Backlinks Through Real Partnerships</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --orange:      #C94A0C;
+      --orange-mid:  #E05A1A;
+      --orange-lt:   #F47A3A;
+      --cream:       #FDF6F0;
+      --sand:        #F5EDE4;
+      --charcoal:    #1A1410;
+      --ink:         #2E221A;
+      --muted:       #7A6558;
+      --border:      #E8D8CC;
+      --white:       #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 80px 40px 100px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      animation: fadeUp .6s ease both;
+    }
+    .badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--charcoal);
+      animation: fadeUp .6s .1s ease both;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      margin-top: 24px;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      font-weight: 300;
+      animation: fadeUp .6s .2s ease both;
+    }
+    .hero-sub a {
+      color: var(--orange-mid);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--orange-lt);
+      transition: color .2s;
+    }
+    .hero-sub a:hover { color: var(--charcoal); }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+    .btn-primary:hover { background: var(--orange-mid); transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--ink);
+      font-weight: 500;
+      font-size: .95rem;
+      padding: 14px 24px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--orange-lt); color: var(--orange); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+      margin: 0 auto;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 40px;
+    }
+
+    .section-label {
+      font-family: 'Syne', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-weight: 300;
+      max-width: 680px;
+    }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--ink); font-weight: 500; }
+
+    /* ── FEATURE GRID ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .feat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .feat:hover { border-color: var(--orange-lt); transform: translateY(-3px); }
+    .feat-icon {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .feat h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+    .feat p {
+      font-size: .88rem;
+      margin: 0;
+    }
+
+    /* ── ROADMAP ── */
+    .roadmap-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .roadmap-list::before {
+      content: '';
+      position: absolute;
+      left: 17px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--orange), var(--border));
+    }
+
+    .rm-item {
+      display: flex;
+      gap: 20px;
+      padding: 0 0 36px 0;
+      position: relative;
+    }
+    .rm-item:last-child { padding-bottom: 0; }
+
+    .rm-dot {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+      position: relative;
+      z-index: 1;
+      transition: border-color .3s;
+    }
+    .rm-item.active .rm-dot {
+      border-color: var(--orange);
+      background: var(--orange);
+    }
+    .rm-item.active .rm-dot span { filter: brightness(10); }
+
+    .rm-body { padding-top: 6px; }
+    .rm-phase {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+    .rm-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+    .rm-desc {
+      font-size: .88rem;
+      color: var(--muted);
+      margin: 0;
+      max-width: 560px;
+    }
+    .tag {
+      display: inline-block;
+      background: #FEF0E6;
+      color: var(--orange);
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 8px;
+      letter-spacing: .04em;
+    }
+    .tag.done { background: #E8F5E9; color: #2E7D32; }
+    .tag.wip { background: #FFF3E0; color: #E65100; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--charcoal);
+    }
+    .footer-brand span { color: var(--orange); }
+    footer p {
+      font-size: .82rem;
+      color: var(--muted);
+      margin: 0;
+      max-width: none;
+    }
+    footer a { color: var(--orange-mid); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero, .section { padding-left: 24px; padding-right: 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">All-in-One Link Building &amp; Content Collaboration</div>
+    <h1>Build High-Quality <em>Backlinks</em><br>Through Real Partnerships</h1>
+    <p class="hero-sub">
+      <a href="https://swappsy.net/" target="_blank" rel="noopener">Swappsy</a> is a platform for SEOs and link builders who are done with cold outreach that goes nowhere. Find real partners, collaborate on content, and grow your rankings - all in one place.
+    </p>
+    <div class="cta-row">
+      <a href="https://swappsy.net/" target="_blank" rel="noopener" class="btn-primary">Get Started Free →</a>
+      <a href="#about" class="btn-secondary">Learn More ↓</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-label">About the Project</div>
+    <h2>What is Swappsy?</h2>
+
+    <p>
+      <strong>Swappsy</strong> is an all-in-one platform built for SEOs, content marketers, and link builders who want to grow their organic presence through genuine collaborations. Instead of hunting for backlink opportunities across fragmented tools and cold email threads, Swappsy gives you a centralised place to post link exchange requests, discover willing partners, and track every live link - all without leaving the platform.
+    </p>
+
+    <p>
+      The idea was born out of a simple frustration: the link building process has always been fragmented, manual, and full of noise. Agencies and solo practitioners spend more time coordinating than actually building. Swappsy changes that by matching you with site owners who are actively looking for the same opportunities - so every conversation starts from mutual intent, not a cold pitch.
+    </p>
+
+    <p>
+      At its core, Swappsy is a <strong>marketplace of trust</strong>. Every user on the platform is there because they want to grow through legitimate, white-hat partnerships. Whether you're after niche editorial links, guest post collaborations, or content swaps with complementary brands, the feed surfaces relevant opportunities based on your niche and domain profile - no spam, no sketchy link farms.
+    </p>
+
+    <p>
+      Beyond matching, Swappsy is actively evolving into a full <strong>ecosystem for SEO professionals</strong>. The roadmap includes native SEO tooling, team collaboration features, and a growing directory of vetted tools - making it not just a link exchange, but the operating system for your entire link building workflow. The goal is simple: if you do link building seriously, Swappsy should be the only tab you need open.
+    </p>
+
+    <p>
+      This repository tracks the public roadmap, release notes, and community feedback for Swappsy. Contributions, suggestions, and bug reports are welcome. If you work in SEO and want to shape where this goes, you're in the right place.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="section-label">Core Features</div>
+    <h2>Everything You Need to Build Links Smarter</h2>
+    <div class="features">
+      <div class="feat">
+        <span class="feat-icon">🔗</span>
+        <h3>Link Exchange Posts</h3>
+        <p>Post your exchange request once and get matched with relevant site owners who are actively looking.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">✍️</span>
+        <h3>Content Collaborations</h3>
+        <p>Find partners for guest posts, co-authored pieces, and content swaps that earn links naturally.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">💬</span>
+        <h3>In-Built Messaging</h3>
+        <p>Negotiate and coordinate directly on platform - no email threads, no lost context.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">📡</span>
+        <h3>Live Link Tracking</h3>
+        <p>Monitor the status of every agreed link in real time: live, pending, lost, or expired.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🛠️</span>
+        <h3>Tool Listings</h3>
+        <p>A curated directory of SEO tools used and recommended by the Swappsy community.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">📊</span>
+        <h3>Exchange History</h3>
+        <p>Full audit trail of every collaboration - so you always know where your links stand.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ROADMAP -->
+  <section class="section">
+    <div class="section-label">Roadmap</div>
+    <h2>Where Swappsy is Headed</h2>
+    <p>We're building toward a full-stack ecosystem for SEOs and link builders. Here's what's shipped, what's in progress, and what's coming.</p>
+
+    <div class="roadmap-list">
+
+      <div class="rm-item active">
+        <div class="rm-dot"><span>✓</span></div>
+        <div class="rm-body">
+          <div class="rm-phase">Phase 1 - Shipped</div>
+          <div class="rm-title">Core Platform Launch</div>
+          <p class="rm-desc">Link exchange marketplace, content collaboration module, in-platform messaging, live link tracking, and exchange history.</p>
+          <span class="tag done">Live</span>
+        </div>
+      </div>
+
+      <div class="rm-item active">
+        <div class="rm-dot"><span>⚙</span></div>
+        <div class="rm-body">
+          <div class="rm-phase">Phase 2 - In Progress</div>
+          <div class="rm-title">Launch SEO Tools Suite</div>
+          <p class="rm-desc">Native SEO utilities built into the platform - so link builders can analyse, audit, and act without switching tabs. Starting with backlink health checks, anchor text analysis, and SERP position monitoring.</p>
+          <span class="tag wip">In Development</span>
+        </div>
+      </div>
+
+      <div class="rm-item">
+        <div class="rm-dot"><span>🌐</span></div>
+        <div class="rm-body">
+          <div class="rm-phase">Phase 3 - Upcoming</div>
+          <div class="rm-title">SEO Ecosystem Expansion</div>
+          <p class="rm-desc">Build out a broader ecosystem where SEOs can discover vetted tools, connect with specialists, access community knowledge, and run their entire link building operation inside Swappsy.</p>
+          <span class="tag">Planned</span>
+        </div>
+      </div>
+
+      <div class="rm-item">
+        <div class="rm-dot"><span>👥</span></div>
+        <div class="rm-body">
+          <div class="rm-phase">Phase 4 - Upcoming</div>
+          <div class="rm-title">Team & Agency Workspaces</div>
+          <p class="rm-desc">Multi-seat accounts, role-based access, client reporting dashboards, and team-level link tracking - purpose-built for agencies managing multiple link building campaigns.</p>
+          <span class="tag">Planned</span>
+        </div>
+      </div>
+
+      <div class="rm-item">
+        <div class="rm-dot"><span>🤝</span></div>
+        <div class="rm-body">
+          <div class="rm-phase">Phase 5 - Vision</div>
+          <div class="rm-title">Partner API &amp; Integrations</div>
+          <p class="rm-desc">Open API access for power users and integrations with leading SEO platforms - so Swappsy fits seamlessly into the workflows you already run.</p>
+          <span class="tag">Exploratory</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-brand">Swapp<span>sy</span></div>
+      <p style="margin-top:6px;">Built for SEOs. Powered by real partnerships.</p>
+    </div>
+    <p>
+      <a href="https://swappsy.net/" target="_blank" rel="noopener">swappsy.net</a>
+      &nbsp;·&nbsp;
+      <a href="https://swappsy.net/" target="_blank" rel="noopener">Get Started Free</a>
+    </p>
+  </footer>
+
+</body>
+</html>
